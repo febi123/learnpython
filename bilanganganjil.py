@@ -2,7 +2,7 @@
 """
 Created on Mon Sep 12 01:58:46 2016
 
-@author: febi
+@author: febi dwi
 """
 import math
 
