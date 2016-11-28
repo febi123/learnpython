@@ -1,0 +1,32 @@
+{% extends "predictapp/layout.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1>Model Gender Prediction By Name / Suku</h1>
+    <p class="lead">Start generate model gender prediction</p>
+    {#<p><a href="https://www.djangoproject.com/" class="btn btn-primary btn-large">Learn more &raquo;</a></p>#}
+     <form class="form-horizontal" id="runmodel-form">
+        {% csrf_token %}
+        
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="hidden" name="next" value="/" />
+                <input type="submit" value="generate model" class="btn btn-primary btn-large" />
+            </div>
+        </div>
+        {% if form.errors %}
+        <p class="validation-summary-errors">Please enter a correct user name and password.</p>
+        {% endif %}
+    </form>
+</div>
+
+{% endblock %}
+
+
+{% block scripts %}
+
+<script src="/static/predictapp/scripts/crawl.js"></script>
+<script src="/static/predictapp/scripts/csrftoken-django.js"></script>
+
+{% endblock %}

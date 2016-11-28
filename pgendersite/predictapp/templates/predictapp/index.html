@@ -1,0 +1,35 @@
+{% extends "predictapp/layout.html" %}
+
+{% block content %}
+
+<div >
+    <h1>Gender Prediction by Name and Tribe</h1>
+    <p class="lead">
+         <form id="predict-form">
+            {% csrf_token %}
+          <div class="form-group">
+            <label for="nama">Name:</label>
+            <input type="text" class="form-control" id="nama">
+          </div>
+          <div class="form-group">
+            <label for="suku">Tribe:</label>
+            <input type="text" class="form-control" id="suku">
+          </div>
+          <div class="form-group">
+            <label for="predictionresult">Prediction:</label>
+            <label class="form-control" id="predictionresult"></label>
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </p>
+</div>
+
+
+{% endblock %}
+
+{% block scripts %}
+
+<script src="/static/predictapp/scripts/predictasync.js"></script>
+<script src="/static/predictapp/scripts/csrftoken-django.js"></script>
+
+{% endblock %}
